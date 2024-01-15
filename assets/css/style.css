@@ -1,0 +1,802 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.row{
+    display: flex;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+
+/***************************     start navbar **********************/
+.navbar{
+    background-color:white ;
+    padding: 20px;
+    border-bottom:tan 1px solid;
+    padding-bottom: 0px;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+}
+.navbar .logo{
+    width:20%;
+}
+.navbar .logo img{
+    max-width: 100%;
+    height: auto; /*  height: 100%--->  يعطي العنصر ارتفاعًا بنسبة 100% للحاوية الأصلية.(الكونتينر)
+                height:auto -----> :  يعني أن ارتفاع العنصر سيعتمد على ارتفاع أطفاله.*/
+}
+
+.navbar .content{
+    width: 70%;
+    position: relative;
+}
+.navbar .content .list{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 17px;
+}
+
+.navbar .content .list a{
+    color: rgb(88, 85, 85);
+    padding:10px;
+    display: inline-block;
+}
+.navbar .content .list a:hover{
+    color: #ff2020;
+}
+.navbar .content .item{
+    margin-right: 32px; 
+    position: relative;
+}
+.navbar .content .item .drop-down {
+    position: absolute;
+    background: #fff;
+    top: 50px;
+    width:140px;
+    padding: 10px 16px 0;
+    border-radius: 10px;
+    border: 2px #E75F76 solid;
+    opacity: 0;
+    visibility: hidden;
+    transition:opacity 1s,top 1s;
+    z-index: 999999;
+}
+.navbar .content .item:hover .drop-down{
+    opacity: 1;
+    visibility: visible;
+    transition: all;
+    transition-duration: 1.5s;
+}
+
+.navbar .rightIcon{
+    width: 10%;
+}
+.navbar .rightIcon .list{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+.navbar .rightIcon .list a{
+    position: relative;
+    color: rgb(88, 85, 85);
+    padding: 10px;
+    display: inline-block;
+}
+.navbar .rightIcon .list a:hover{
+   background-color: #E75F76;
+}
+.navbar .rightIcon .item:nth-child(2)::after{
+    content: '0';
+    position: absolute;
+    bottom: 585px;
+    background-color: #E75F76;
+    color: #fff;
+    padding: 4px 5px;
+    left: 1192px;
+    font-size: 10px;
+    border-radius: 10px;
+}
+.navbar .rightIcon .list .item .fa-solid .fa-chevron-down{
+    font-weight: 100;
+}
+label,#inpChecked{
+    display: none; 
+  }
+  @media screen and (max-width:575px){ 
+    .navbar{
+        position: fixed;
+        width: 100%;
+        z-index: 999999;
+    }
+    .navbar .logo{
+        width: 50%;
+    }
+    .navbar .logo img{
+        width: 70%;  
+    }
+    .navbar .content {
+        width: 25%;
+    }
+    label{
+        position: absolute;
+        top: 30px;
+        left: 330px;
+        width: 100%;
+        display: block;  
+        order: 1;
+        padding-left: -15px;
+    }
+    .navbar .rightIcon{
+        width:5%;
+    } 
+    .navbar .content .list{
+        position: absolute;
+        background-color: #333;
+        top:100%; 
+        padding: 28px 18px;
+        opacity: 0;  
+        visibility: hidden;
+    }
+
+ 
+    #inpChecked:checked + .content .list {
+        opacity: 1; 
+        visibility: visible;
+        transition: opacity 1s;
+    }
+    .navbar .content .list{
+        display: block;
+    }
+
+  }
+  @media screen and (min-width:576px) and (max-width:991px){
+    .navbar .logo img{
+        width: 90%;
+    }
+  }
+
+
+/***************************     end navbar **********************/
+
+
+/***************************     start handmade **********************/
+.handMade{
+    height: 100vh;
+    background-image: url(../images/img1.webp);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden; /*مشان احل مشكلة المارجن كولابس ، لأنه مشتركة مه الديف تبع التيكست ، وما بزبط اعطي مارجين توب الا تا اعمل هاي  */
+}
+
+.handMade .handMadeText{
+    margin-left: 80px;
+    margin-top: 160px;
+}
+.handMade .handMadeText p{
+    color: #E75F76;
+    padding-bottom: 15px;
+
+}
+.handMade .handMadeText h2{
+    width: 50%;
+    font-size: 65px;
+    line-height: 65px;
+    padding-bottom: 16px;
+}
+
+.handMade .handMadeText h4{
+    color: rgb(119, 119, 119);
+    padding: 28px 0px;
+}
+
+.handMade .handMadeText .btn{
+    padding: 10px 20px;
+    background-color: #232629;
+    color: #fff;
+    font-size: 14px;
+    border:0;/*عشان اشيل حدود البوردر  */
+}
+.handMade .handMadeText .btn i{
+    font-size: 10px;
+}
+.handMade .handMadeText .btn:hover{
+    background-color: #E75F76;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .handMade{
+        height: 50vh;
+    }
+    .handMade .handMadeText{
+        margin-left: 20px;
+        margin-top: 120px;
+    }
+    .handMade .handMadeText h2{
+        width: 85%;
+    }
+}
+@media screen and (max-width:575px){
+    .handMade{
+        height: 400px;
+    }
+    .handMade .handMadeText{
+        width: 200%;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+    .handMade .handMadeText h2{
+        width: 35%;
+      font-size: 30px;
+      line-height: 40px;
+    }
+}
+
+
+
+/***************************     end handmade **********************/
+
+
+
+
+
+/***************************     start products **********************/
+
+.products{
+    margin-top: 30px;
+}
+
+.products .row{
+    justify-content: center;
+    gap: 20px;
+}
+.products .imageProduct{
+    position: relative;
+  
+}
+
+.products .imageProduct .contentImage{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+.products .imageProduct .contentImage p{
+    color: grey;
+    padding-bottom: 7px;
+}
+.products .imageProduct .contentImage h2{
+    padding-bottom: 15px;
+}
+
+.products .imageProduct .contentImage a{
+color: #E75F76;
+}
+
+.products .imageProduct .contentImage i{
+    font-size: 10px;
+}
+
+.products .imageProduct .contentImage a:hover{
+    color: #232629;
+    transition: color .5s;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .products .imageProduct{
+        width: 40%;
+    }
+    .products .imageProduct img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width:575px){
+    .products .row{
+        flex-wrap: wrap;/* flex-direction: column; */
+    }
+    .products .imageProduct img{
+        height: 100%;
+    }
+    .products .imageProduct:nth-child(1) img{
+        width: 100%;
+        }
+}
+
+/***************************     end products **********************/
+
+
+
+/***************************     start New-Arrivals **********************/
+.New-Arrivals{
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+.New-Arrivals .textArrivals{
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.New-Arrivals .textArrivals p{
+    color: gray;
+    font-size: 20px;
+}
+.New-Arrivals .single-Arrivals .img-arrivals{
+    position: relative;
+}
+
+.New-Arrivals .single-Arrivals img{
+    width: 85%;
+}
+.New-Arrivals .single-Arrivals .img-arrivals .fa-solid{
+    padding-right: 15px;
+}
+.New-Arrivals .single-Arrivals .img-arrivals .add-cart{
+    word-spacing: 3px;
+    position: absolute;
+    left: 5px;
+    bottom: 16px;
+    background-color: #232629;
+    color: #fff;
+    padding: 8px 27px;
+    opacity: 0;
+    visibility: hidden;
+}
+.New-Arrivals .single-Arrivals .img-arrivals:hover a{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s;
+}
+
+.New-Arrivals .single-Arrivals .img-arrivals .add-cart:hover{
+    background-color: #E75F76;
+}
+
+.New-Arrivals .caption a{
+    color: gray;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.New-Arrivals .caption a:hover{
+    color: #E75F76;
+}
+@media screen and (min-width:576px) and (max-width:991px){
+   .New-Arrivals .container{
+    width: 100%;
+   }
+   .New-Arrivals .row{
+    gap: 20px;
+   }
+    .New-Arrivals .single-Arrivals img{
+        width: 100%;
+    }
+    .New-Arrivals .single-Arrivals .img-arrivals .add-cart{
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+@media screen and (max-width:575px){
+    .New-Arrivals .single-Arrivals .img-arrivals .add-cart{
+        left:20px;
+        padding: 7px 35px;
+    }
+    .New-Arrivals .row{
+       flex-wrap: wrap;
+       gap: 50px;
+    }
+    .New-Arrivals .single-Arrivals img{
+        width: 100%;
+    }
+}
+
+
+/***************************     end New-Arrivals **********************/
+
+/***************************     start videoHands **********************/
+.videoHands{
+    margin-top: 100px;
+    height: 100vh;
+    background-image: url(../images/Rectangle-5.png);
+    background-size: cover;
+   background-position: center center;
+   width: 100%;
+   display: flex;
+   align-items: center;/* في الوسط بشكل عمودي ما بزبط اكتبها بدون الي فوقها  */
+   justify-content: center; /*في الوسط بشكل افقي */
+
+}
+.videoHands .content {
+    text-align: center;
+    line-height: 70px;
+}
+.videoHands .content .play-btn a{
+    background-color: transparent;
+    font-size: 40px;
+    color: #232629;
+    border: #232629 solid 2px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.videoHands .content h2{
+    font-size: 50px;
+}
+.videoHands .content p{
+font-size: 20px;
+ color: gray;
+}
+@media screen and (min-width:576px) and (max-width:991px){
+.videoHands{
+    height:400px;
+}
+
+}
+@media screen and (max-width:575px){
+    .videoHands{
+        height:300px;
+    }
+    .videoHands .content h2{
+        font-size: 30px;
+    }
+    .videoHands .content p{
+    font-size: 15px;
+    }
+}
+/***************************     end videoHands **********************/
+
+/***************************     start Feature-Products **********************/
+.Feature-Products{
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+.Feature-Products .textArrivals{
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.Feature-Products .textArrivals p{
+    color: gray;
+    font-size: 20px;
+}
+.Feature-Products .single-Arrivals .img-arrivals{
+    position: relative;
+}
+
+.Feature-Products .single-Arrivals img{
+    width: 85%;
+}
+.Feature-Products .single-Arrivals .img-arrivals .fa-solid{
+    padding-right: 15px;
+}
+.Feature-Products .single-Arrivals .img-arrivals .select-options{
+    word-spacing: 3px;
+    position: absolute;
+    left: 5px;
+    bottom: 16px;
+    background-color: #232629;
+    color: #fff;
+    padding: 8px 27px;
+    opacity: 0;
+    visibility: hidden;
+}
+.Feature-Products .single-Arrivals .img-arrivals:hover a{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s;
+}
+
+.Feature-Products .single-Arrivals .img-arrivals .select-options:hover{
+    background-color: #E75F76;
+}
+
+.Feature-Products .caption a{
+    color: gray;
+    display: inline-block;
+    padding: 10px 0px;
+}
+
+.Feature-Products .caption a:hover{
+    color: #E75F76;
+}
+.Feature-Products .single-Arrivals .img-arrivals .fa-solid {
+    padding-right: 5px;
+    font-size: 14px;
+}
+@media screen and (min-width:576px) and (max-width:991px){
+   .Feature-Products .container{
+    width: 100%;
+   }
+   .Feature-Products .row{
+    gap: 20px;
+   }
+    .Feature-Products .single-Arrivals img{
+        width: 100%;
+    }
+    .Feature-Products .single-Arrivals .img-arrivals .select-options{
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+@media screen and (max-width:575px){
+    .Feature-Products .single-Arrivals .img-arrivals .select-options{
+        left:20px;
+        padding: 7px 35px;
+    }
+    .Feature-Products .row{
+       flex-wrap: wrap;
+       gap: 50px;
+    }
+    .Feature-Products .single-Arrivals img{
+        width: 100%;
+    }
+}
+
+
+/***************************     end Feature-Products **********************/
+
+
+
+
+/***************************     start lamps **********************/
+.lamps{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.lamps .lamps-row{
+    display: flex;
+    gap:20px
+}
+
+
+.lamps .lamps-row .img-single:nth-child(1) .lamps-column{
+    display: flex;
+    flex-direction: column;  /*مشان احط الصورتين فوق بعض */
+    gap: 120px;
+}
+
+.lamps .lamps-row .img-single:nth-child(1) .lamps-column .img-single{
+    width: 100%;
+height: 150px;
+}
+.lamps .img-single {
+    position: relative;
+}
+.lamps .img-single .contentImage{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+.lamps .img-single .contentImage p{
+    color: grey;
+    padding-bottom: 7px;
+}
+.lamps .img-single .contentImage h2{
+    padding-bottom: 15px;
+}
+
+.lamps .img-single .contentImage a{
+color: #E75F76;
+}
+
+.lamps .img-single .contentImage i{
+    font-size: 10px;
+}
+
+.lamps .img-single .contentImage a:hover{
+    color: #232629;
+    transition: color .5s;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+.lamps{
+    margin-left: -30px;
+}
+ .lamps .container .lamps-row .img-single img{
+    width: 100%;
+ }
+ .lamps .lamps-row .img-single:nth-child(1) .lamps-column{
+    gap: 10px;
+ }
+ .lamps .img-single .contentImage p{
+    font-size: 16px;
+}
+.lamps .img-single .contentImage h2{
+    font-size: 16px;
+}
+.lamps .img-single .contentImage a{
+    font-size: 16px;
+}
+.lamps .img-single .contentImage i{
+    font-size: 16px;
+}
+ 
+}
+@media screen and (max-width:575px){
+    .lamps .lamps-row{
+        display: block;
+    }
+    .lamps .lamps-row .img-single:nth-child(1) .lamps-column{
+        gap: 20px;
+     }
+     .lamps .container .lamps-row .img-single{
+        margin-bottom: 20px;
+     }
+  
+    .lamps .container .lamps-row .img-single img{
+        width: 100%;
+
+     }
+     .lamps .lamps-row .img-single:nth-child(1) .lamps-column .img-single {
+        margin-bottom: 10px;
+    }
+    .lamps .img-single .contentImage p{
+        font-size: 16px;
+    }
+    .lamps .img-single .contentImage h2{
+        font-size: 16px;
+    }
+    .lamps .img-single .contentImage a{
+        font-size: 16px;
+    }
+    .lamps .img-single .contentImage i{
+        font-size: 16px;
+    }
+
+}
+/***************************     end lamps **********************/
+
+/***************************     start instagram **********************/
+.instagram{
+    text-align: center;
+    margin: 50px 0;
+}
+.instagram h2{
+padding-bottom: 20px;
+font-size:40px;
+}
+.instagram p{
+    padding-bottom: 20px; 
+    color: grey; 
+}
+.instagram .error{
+    padding-bottom: 20px;
+    color:black;
+
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .instagram .container{
+        width: 100%;
+    }
+    .instagram .error{
+        text-align: left;
+       padding-left: 5px;
+       padding-right: 5px;
+    }
+}
+@media screen and (max-width:575px){
+    .instagram .container{
+        width: 100%;
+    }
+    .instagram .error{
+        text-align: left;
+       padding-left: 7px;
+        padding-right: 7px;
+    }  
+}
+/***************************     end instagram **********************/
+
+
+/***************************     start Discounts **********************/
+
+.Discounts .discountContant p{
+    color: gray;
+}
+.Discounts .discountContant{
+    /* border: 1px solid gray; */
+    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+    line-height: 30px;
+    border-left: 1px solid gray ;
+    border-top:  1px solid gray;
+    border-bottom:  1px solid gray;
+}
+
+@media screen and (max-width:575px){
+    .Discounts .row{
+        flex-direction: column;
+    }
+}
+/***************************     end Discounts **********************/
+
+
+
+/***************************     start  final section **********************/
+.final-section{
+    background-color: #2A2A2A;
+    height: 450px;
+    text-align: center;
+    margin-top: 100px;
+   width: 100%;
+   display: flex;
+   align-items: center;/* في الوسط بشكل عمودي ما بزبط اكتبها بدون الي فوقها  */
+   justify-content: center;
+}
+.final-section .contant{
+    width: 40%;
+   display: block;
+   align-items: center;/* في الوسط بشكل عمودي ما بزبط اكتبها بدون الي فوقها  */
+   justify-content: center; /*في الوسط بشكل افقي */
+    line-height: 50px;
+}
+.final-section .contant p{
+    color: grey;
+}
+.final-section .contant .final {
+    color: white;
+}
+.final-section .contant .final a{
+    color: #E75F76;
+}
+.final-section .contant .final a:hover{
+    color: white;
+    font-weight: 900;
+}
+.final-section .contant input{
+    border: none;
+    padding: 10px;
+    width: 50%;
+}
+.final-section .contant .btn{
+    border-color: white;
+    background-color: transparent;
+    padding: 8px;
+    color: white;
+    width: 25%;
+}
+
+.final-section .contant .btn:hover{
+    color: #E75F76;
+    border-color: #E75F76;
+}
+.final-section .icons i{
+padding: 10px;
+color: gray;
+}
+.final-section .icons i:hover{
+    color: #E75F76;
+}
+@media screen and (min-width:576px) and (max-width:991px){
+    .final-section .contant{
+        width:80%;
+    }
+}
+@media screen and (max-width:575px){
+    .final-section .contant{
+        width:80%;
+        line-height: 40px;
+    }
+    .final-section .icons i{
+        padding-top: 15px;
+    }
+    .final-section .contant .btn{
+        width: 30%;
+    }
+
+}
+
+/***************************     end   final section **********************/
